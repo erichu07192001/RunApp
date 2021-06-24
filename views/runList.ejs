@@ -20,6 +20,26 @@
 </form>
 
 <h2>Previous Runs:</h2>
+
+<table class="table table-bordered table-striped">
+  <thead>
+    <tr>
+      <th>Distance</th>
+      <th>Time</th>
+      <th>When</th>
+      <th>remove</th>
+    </tr>
+  </thead>
+  <% items.forEach(item => { %>
+  <tbody>
+    <td><%= item.distance %> <%= item.distanceUnit %></td>
+    <td><%= item.min %>:<%= item.sec %>
+    <td><%= item.createdAt %>
+    <td><a href="/run/remove/<%=item._id %>">X</a></td>
+  </tbody>
+  <% }) %>
+</table>
+
 <% items.forEach(item => { %>
   <a href="/run/remove/<%=item._id %>">X</a>
   | 
