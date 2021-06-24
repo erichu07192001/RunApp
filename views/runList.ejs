@@ -1,0 +1,29 @@
+
+    <h1> <%= user.googlename %> </h1>
+    <p>Please enter information about your run</p>
+
+<form method="post" action="run" class="">
+  Enter your name:
+  <input type="text" name= "fullname" value = ""> <br>
+  Minutes:
+  <input type="number" name="min" value = ""><br>
+  Seconds:
+  <input type="number" name="sec" value = ""> <br>
+  Distance:
+  <input type="number" name="distanceNum" value = "">
+
+  <select class="" name="distanceOption">
+    <option value="Mi">Mi</option>
+    <option value="Km">Km</option>
+  </select>
+  <input type="submit" value="Log">
+</form>
+
+<h2>Previous Runs:</h2>
+<% items.forEach(item => { %>
+  <a href="/run/remove/<%=item._id %>">X</a>
+  | 
+  <%= item.distance %> <%= item.distanceUnit %> <%= item.min %>:<%= item.sec %> <%= item.createdAt %>
+  <br>
+<% }) %>
+

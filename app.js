@@ -28,7 +28,7 @@ const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 const toDoRouter = require('./routes/todo');
 const toDoAjaxRouter = require('./routes/todoAjax');
-
+const runRouter = require('./routes/run'); // Adding the running route
 
 
 const app = express();
@@ -53,6 +53,7 @@ app.use('/users', usersRouter);
 
 app.use('/todo',toDoRouter);
 app.use('/todoAjax',toDoAjaxRouter);
+app.use('/run', runRouter) // running Router for use
 
 const myLogger = (req,res,next) => {
   console.log('inside the thesting route!')
