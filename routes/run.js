@@ -33,7 +33,7 @@ router.post('/', // Add the additional information
         userId: req.user._id
         })
       await run.save();
-      res.redirect('/') // change to a different route
+      res.redirect('/run') // change to a different route
 });
 
 router.get('/remove/:itemId',
@@ -41,7 +41,7 @@ router.get('/remove/:itemId',
   async (req, res, next) => {
       console.log("inside /run/remove/:itemId")
       await RunItem.remove({_id:req.params.itemId});
-      res.redirect('runList')
+      res.redirect('/run')
 });
 
 
@@ -49,6 +49,7 @@ router.get('/remove/:itemId',
 router.get('/',
   isLoggedIn,
   async (req, res, next) => {
+      console.log("Pulling from database")
       res.locals.items = await RunItem.find({userId:req.user._id}) // Setting res.locals.item to the RunItem
       console.log(res.locals.items.length)
       res.render('runList');

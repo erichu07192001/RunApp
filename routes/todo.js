@@ -24,11 +24,12 @@ isLoggedIn = (req,res,next) => {
 router.post('/',
   isLoggedIn,
   async (req, res, next) => {
-      const todo = new ToDoItem(
-        {item:req.body.item,
-         createdAt: new Date(),
-         complete: false,
-         userId: req.user._id
+      const todo = new ToDoItem({
+        fullname: req.user.googlename,
+        item:req.body.item,
+        createdAt: new Date(),
+        complete: false,
+        userId: req.user._id
         })
       await todo.save();
       res.redirect('/todo')

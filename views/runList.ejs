@@ -3,8 +3,6 @@
     <p>Please enter information about your run</p>
 
 <form method="post" action="run" class="">
-  Enter your name:
-  <input type="text" name= "fullname" value = ""> <br>
   Minutes:
   <input type="number" name="min" value = ""><br>
   Seconds:
@@ -27,14 +25,14 @@
       <th>Distance</th>
       <th>Time</th>
       <th>When</th>
-      <th>remove</th>
+      <th>Remove</th>
     </tr>
   </thead>
   <% items.forEach(item => { %>
   <tbody>
     <td><%= item.distance %> <%= item.distanceUnit %></td>
-    <td><%= item.min %>:<%= item.sec %>
-    <td><%= item.createdAt %>
+    <td><%= item.min %>:<%= item.sec %></td>
+    <td><%= item.createdAt %></td>
     <td><a href="/run/remove/<%=item._id %>">X</a></td>
   </tbody>
   <% }) %>
