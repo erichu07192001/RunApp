@@ -1,0 +1,28 @@
+<%- include('bootheader') -%>
+
+<%- include('menubar') -%>
+
+<div class="jumbotron">
+    <h1>Weather in <%= results.location.name %></h1><br>
+    <h2>It's currently...</h2>
+</div>
+
+<table class="table table-bordered table-striped">
+  <thead>
+    <tr>
+      <th>Celcius</th>
+      <th>Farenheit</th>
+      <th>Condition</th>
+    </tr>
+  </thead>
+  <tbody>
+    <td><%= results.current.temp_c %></td>
+    <td><%= results.current.temp_f %></td>
+    <td><%= results.current.condition.text %> <img src= "<%=results.current.condition.icon%>" alt="weatherIcon" width = 20></td>
+  </tbody>
+</table>
+
+
+<!-- <%= JSON.stringify(results) %> -->
+
+<%- include('bootfooter') -%>

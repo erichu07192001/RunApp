@@ -1,16 +1,28 @@
+<%- include('bootheader') -%>
 
+<%- include('menubar') -%>
 
   <div class="jumbotron">
-    <h1> Running Application </h1>
-    <p> This app is used to track information about your running progress </p>
+    <h1> RunApp </h1>
+  </div>
+
+  <div>
     <ul>
-      <li><a href="/testing">Testing</a></li>
       <% if (loggedIn) {%>
       <li><a href="/run"> Log your run!</a></li>
       <li><a href="/profile">See your profile </a></li>
       <li><a href="/profiles">See everyone's profile</a></li>
       <li><a href="/todo">See your to do list </a></li>
       <li><a href="/todoAjax">See your to do list with Ajax </a></li>
+      <% } else{%>
+        <p>Welcome to RunApp <br>
+          RunApp is an application used to help runners track their times <br>
+          To start, feel free by logging in! <br>
+        </p>
       <% } %>
+      <li><a href="/weather">Search Weather</a></li>
+      <li><a href="/about">About</a></li>
     </ul>
   </div>
+
+  <%- include('bootfooter') -%>

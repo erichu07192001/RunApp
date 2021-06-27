@@ -1,0 +1,16 @@
+<%- include('bootheader') -%>
+
+<%- include('menubar') -%>
+
+    <div class="jumbotron">
+        <h1>Look up the weather</h1>
+    </div>
+
+    <form method = "post" action = "/weather">
+      Please enter your city or zip code:
+      <input type="text" name="location"><br>
+      <input type="submit">
+    </form>
+
+
+<%- include('bootfooter') -%>

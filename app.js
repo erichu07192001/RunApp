@@ -6,6 +6,7 @@ const logger = require('morgan');
 const cors = require('cors');
 const layouts = require("express-ejs-layouts");
 //const auth = require('./config/auth.js');
+const axios = require("axios"); // Importing Axios for APIs
 
 
 const mongoose = require( 'mongoose' );
@@ -59,6 +60,38 @@ const myLogger = (req,res,next) => {
   console.log('inside the thesting route!')
   next()
 }
+
+// Render about page
+app.get('/about', (req,res) => {
+  res.render('about')
+})
+
+// Weather search api
+app.get("/weather", (req,res) => {
+  res.render("weather")
+})
+
+app.post("/weather",
+  async (req,res,next) => {
+    try {
+      const location = req.body.location
+      const url = "http://api.weatherapi.com/v1/current.json?key=dab7f57ce9c6486e983182326211606&q="+location+"&aqi=no"
+      const result = await axios.get(url)
+      // res.json(result.data) // this is used to display it in json
+
+      console.dir(result.data)
+      console.log('results')
+      console.dir(result.data.results)
+
+      // Sending information to response
+      res.locals.results = result.data
+      console.dir(result.data)
+      res.render('showWeather')
+
+    } catch(error){
+      next(error)
+    }
+})
 
 app.get('/testing',
   myLogger,
