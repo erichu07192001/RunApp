@@ -25,6 +25,7 @@ router.post('/', // Add the additional information
     console.log("Attempting to save with runItem Schema")
     console.dir(req.body)
       const run = new RunItem({
+        fullname: req.user.googlename,
         distance: parseFloat(req.body.distanceNum),
         distanceUnit: req.body.distanceOption,
         min: parseFloat(req.body.min),

@@ -12,14 +12,16 @@
       <li><a href="/run"> Log your run!</a></li>
       <li><a href="/profile">See your profile </a></li>
       <li><a href="/profiles">See everyone's profile</a></li>
-      <li><a href="/todo">See your to do list </a></li>
-      <li><a href="/todoAjax">See your to do list with Ajax </a></li>
+      <!-- <li><a href="/todo">See your to do list </a></li> -->
+      <!-- <li><a href="/todoAjax">See your to do list with Ajax </a></li> -->
       <% } else{%>
         <p>Welcome to RunApp <br>
           RunApp is an application used to help runners track their times <br>
-          To start, feel free by logging in! <br>
+          To start, please log in! <br>
         </p>
+        <li><a href="/auth/google">Login</a></li>
       <% } %>
+      <li><a href="/leaderboard">Check the Leaderboard</a></li>
       <li><a href="/weather">Search Weather</a></li>
       <li><a href="/about">About</a></li>
     </ul>

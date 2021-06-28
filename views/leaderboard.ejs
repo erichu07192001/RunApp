@@ -1,0 +1,29 @@
+<%- include('bootheader') -%>
+<%- include('menubar') -%>
+
+<div class="jumbotron">
+  <h1>Leaderboard</h1>
+  <p> 
+  </p>
+</div>
+
+<table class="table table-bordered table-striped">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Distance</th>
+      <th>Time</th>
+      <th>When</th>
+    </tr>
+  </thead>
+  <% items.forEach(item => { %>
+  <tbody>
+    <td><%= item.fullname %></td>
+    <td><%= item.distance %> <%= item.distanceUnit %></td>
+    <td><%= item.min %>:<%= item.sec %></td>
+    <td><%= item.createdAt %></td>
+  </tbody>
+  <% }) %>
+</table>
+
+<%- include('bootfooter') -%>

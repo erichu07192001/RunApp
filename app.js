@@ -113,6 +113,19 @@ app.get('/profiles',
     }
   )
 
+  // Implementing a leaderboard
+  app.get('/leaderboard',
+    async (req,res,next) => {
+      try {
+        res.locals.items = await RunItem.find({})
+        res.render('leaderboard')
+      }
+      catch(e){
+        next(e)
+      }
+    }
+  )
+
 app.use('/publicprofile/:userId',
     async (req,res,next) => {
       try {
@@ -161,6 +174,7 @@ app.use('/data',(req,res) => {
 })
 
 const User = require('./models/User');
+const RunItem = require('./models/RunItem');
 
 app.get("/test",async (req,res,next) => {
   try{
