@@ -33,7 +33,14 @@
   <% items.forEach(item => { %>
   <tbody>
     <td><%= item.distance %> <%= item.distanceUnit %></td>
-    <td><%= item.min %>:<%= item.sec %></td>
+    <td>
+      <%= item.min%>:
+      <% if(item.sec < 10) {%>
+      0<%= item.sec %>
+      <% }else { %>
+      <%= item.sec %>
+      <% } %>
+    </td>
     <td><%= item.createdAt %></td>
     <td><a href="/run/remove/<%=item._id %>">X</a></td>
   </tbody>

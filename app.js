@@ -117,7 +117,7 @@ app.get('/profiles',
   app.get('/leaderboard',
     async (req,res,next) => {
       try {
-        res.locals.items = await RunItem.find({})
+        res.locals.items = await RunItem.find({}).sort({min: 1, sec: 1})
         res.render('leaderboard')
       }
       catch(e){
