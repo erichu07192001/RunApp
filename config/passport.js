@@ -49,7 +49,7 @@ module.exports = function(passport) {
 
     const clientID = 8929047929-bbko7drnudj22o68r8659ahd7kcniul1.apps.googleusercontent.com
     const clientSecret = KumHmCTwa8XThYhWgNVZ-o4n
-    const callbackURL = https://guarded-bastion-53221.herokuapp.com/
+    const callbackURL = https://guarded-bastion-53221.herokuapp.com/login/authorized
 
     passport.use(new GoogleStrategy({
 
