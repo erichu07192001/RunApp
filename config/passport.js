@@ -37,19 +37,19 @@ module.exports = function(passport) {
     // =========================================================================
     // load the auth variables
 
-    //var configAuth = require('./auth');
-    //const clientID = configAuth.googleAuth.clientID
-    //const clientSecret = configAuth.googleAuth.clientSecret
-    //const callbackURL = configAuth.googleAuth.callbackURL
+/*
+    var configAuth = require('./auth');
+    const clientID = configAuth.googleAuth.clientID
+    const clientSecret = configAuth.googleAuth.clientSecret
+    const callbackURL = configAuth.googleAuth.callbackURL
+*/
 
-    // backup
-    //const clientID = process.env.clientID
-    //const clientSecret = process.env.clientSecret
-    //const callbackURL = process.env.callbackURL
 
-    const clientID = 8929047929-bbko7drnudj22o68r8659ahd7kcniul1.apps.googleusercontent.com
-    const clientSecret = KumHmCTwa8XThYhWgNVZ-o4n
-    const callbackURL = https://guarded-bastion-53221.herokuapp.com/login/authorized
+
+    const clientID = process.env.clientID
+    const clientSecret = process.env.clientSecret
+    const callbackURL = process.env.callbackURL
+
 
     passport.use(new GoogleStrategy({
 
