@@ -9,9 +9,14 @@
   <div>
     <ul>
       <% if (loggedIn) {%>
-      <li><a href="/run"> Log your run!</a></li>
+      <a class="btn btn-primary" href="/run" role="button">Log your run!</a>
+      <a class="btn btn-primary" href="/profile" role="button">See your profile</a>
+      <a class="btn btn-primary" href="/profiles" role="button">See everyone's profiles</a>
+
+      <!-- <li><a href="/run"> Log your run!</a></li>
       <li><a href="/profile">See your profile </a></li>
-      <li><a href="/profiles">See everyone's profile</a></li>
+      <li><a href="/profiles">See everyone's profile</a></li> -->
+
       <!-- <li><a href="/todo">See your to do list </a></li> -->
       <!-- <li><a href="/todoAjax">See your to do list with Ajax </a></li> -->
       <% } else{%>
@@ -19,11 +24,16 @@
           RunApp is an application used to help runners track their times <br>
           To start, please log in! <br>
         </p>
-        <li><a href="/auth/google">Login</a></li>
+        <a class="btn btn-primary" href="/auth/google" role="button">Login</a>
+        <!--<li><a href="/auth/google">Login</a></li>-->
       <% } %>
-      <li><a href="/leaderboard">Check the Leaderboard</a></li>
+      <a class="btn btn-primary" href="/leaderboard" role="button">Check the Leaderboard</a>
+      <a class="btn btn-primary" href="/weather" role="button">Search Weather</a>
+      <a class="btn btn-primary" href="/about" role="button">About</a>
+      
+      <!--<li><a href="/leaderboard">Check the Leaderboard</a></li>
       <li><a href="/weather">Search Weather</a></li>
-      <li><a href="/about">About</a></li>
+      <li><a href="/about">About</a></li> -->
     </ul>
   </div>
 
