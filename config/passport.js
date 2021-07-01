@@ -44,8 +44,6 @@ module.exports = function(passport) {
     const callbackURL = configAuth.googleAuth.callbackURL
 */
 
-
-
     const clientID = process.env.clientID
     const clientSecret = process.env.clientSecret
     const callbackURL = process.env.callbackURL
