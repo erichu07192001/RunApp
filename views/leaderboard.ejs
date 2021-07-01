@@ -62,7 +62,7 @@
             </tr>
           </thead>
           <% items.forEach(item => { %>
-            <% if ((item.distance == 1.6 && item.distanceUnit == "Km") || (item.distance == 1 && ittem.distanceUnit == "Mi")) { %>
+            <% if ((item.distance == 1.6 && item.distanceUnit == "Km") || (item.distance == 1 && item.distanceUnit == "Mi")) { %>
             <tbody>
               <td><%= item.fullname %></td>
               <td><%= item.distance %> <%= item.distanceUnit %></td>
